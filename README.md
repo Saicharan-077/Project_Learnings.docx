@@ -1,133 +1,76 @@
-# Project_Learnings.docx
+# My project Learnings 
+GIT SETUP AND CLONE
 
-To copy the content from git to the vs code or our desktop 
-Steps :
-1.Initialise the git in vs code in the terminal by opening a new folder where you want to copy.
-syntax : git init
+1  Open VS Code and create or open a folder where the project will be placed
+2  Initialize Git in the terminal
+   Command: git init
+3  Add a remote origin to your local repository
+   Command: git remote add origin <your-repo-url>
+4  Check which origin you are connected to
+   Command: git remote
+5  Verify the fetch and push URLs
+   Command: git remote -v
+6  Set global Git username and email
+   Command: git config --global user.name "SAI CHARAN"
+   Command: git config --global user.email "yourmail@example.com"
+7  Rename branch to main if needed
+   Command: git branch -m main
+8  Pull the existing project from GitHub
+   Command: git pull origin main
 
-2. To add a remote named origin to our repository.
-syntax : git remote origin
+WARDEN APP SETUP
 
-3.git remote
-To check in which origin we are
+1  Switch to E Drive where the project is located
+   Command: E:
+2  Navigate to the warden-app folder
+   Command: cd "KP SIR PROJECT\hostel-food\warden-app"
+3  Install all required frontend dependencies
+   Command: npm install
+4  Install cross-env to support environment variables on Windows
+   Command: npm install cross-env --save-dev
+5  Open package.json to edit the start script
+   Command: notepad package.json
+6  Change the start script line
+   From: "start": "PORT=4000 react-scripts start"
+   To:   "start": "cross-env PORT=4000 react-scripts start"
+7  Start the Warden React App
+   Command: npm start
 
-4.git remote -v
-to make it ready for push and pull operations
-o/p = fetch and push 
+STUDENT APP SETUP
 
-5.  Set the user name and email
+1  Navigate to student-app folder
+   Command: cd "..\student-app"
+2  Install all student app dependencies
+   Command: npm install
+3  Install cross-env if not already installed
+   Command: npm install cross-env --save-dev
+4  Open package.json to edit start script
+   Command: notepad package.json
+5  Change the start script line
+   From: "start": "PORT=3000 react-scripts start"
+   To:   "start": "cross-env PORT=3000 react-scripts start"
+6  Start the Student React App
+   Command: npm start
 
-git config --global user.name "SAI CHARAN"
+BACKEND SERVER SETUP
 
-git config --global user.email "mailid"
+1  Navigate to backend folder
+   Command: cd "..\backend"
+2  Install backend dependencies
+   Command: npm install
+3  Open package.json to edit backend start script
+   Command: notepad package.json
+4  Change the start script line
+   From: "start": "PORT=6201 ts-node src/index.ts"
+   To:   "start": "cross-env PORT=6201 ts-node src/index.ts"
+5  Install cross-env if not installed
+   Command: npm install cross-env --save-dev
+6  Start the Backend Server
+   Command: npm start
 
-6.git branch -m main -> to change if required
+HELPFUL COMMANDS
 
-7.git pull origin main  -> to pull data
-
-=====================================================
- Switch to E Drive where the project is located
-=====================================================
-E:
-
-=====================================================
-🟩 WARDEN APP SETUP
-=====================================================
-
-🔹 Step 1: Go to warden-app folder
-cd "KP SIR PROJECT\hostel-food\warden-app"
-
-🔹 Step 2: Install all dependencies from package.json
-WHY? This ensures all required libraries (like React) are available.
-npm install
-
-🔹 Step 3: Install cross-env (only once)
-WHY? Windows does not support setting env variables directly (e.g., PORT=4000). 
-cross-env makes this work on all systems including Windows.
-npm install cross-env --save-dev
-
-🔹 Step 4: Open package.json for editing
-WHY? We need to modify the "start" script to use cross-env.
-notepad package.json
-
-✍️ Inside package.json, find and update:
-BEFORE:
-     "start": "PORT=4000 react-scripts start"
-AFTER:
-     "start": "cross-env PORT=4000 react-scripts start"
- Save and close Notepad after editing.
-
-🔹 Step 5: Start the Warden React App
-:: WHY? This launches the frontend on http://localhost:4000
-npm start
-
-=====================================================
- 🟦 STUDENT APP SETUP
- =====================================================
-
-🔹 Step 1: Go to student-app folder
-cd "..\student-app"
-
-🔹 Step 2: Install all dependencies
-npm install
-
-🔹 Step 3: Install cross-env (only once)
-npm install cross-env --save-dev
-
-🔹 Step 4: Open package.json to edit start script
-notepad package.json
-
-✍️ Inside package.json, find and update:
-BEFORE:
-    "start": "PORT=3000 react-scripts start"
- AFTER:
-    "start": "cross-env PORT=3000 react-scripts start"
- Save and close Notepad.
-
-🔹 Step 5: Start the Student React App
- WHY? This launches the frontend on http://localhost:3000
- npm start
-
- =====================================================
-🟧 BACKEND SERVER SETUP
- =====================================================
-
-🔹 Step 1: Go to backend folder
-cd "..\backend"
-
-🔹 Step 2: Install backend dependencies
- WHY? This installs TypeScript, Express, and all other required packages.
-npm install
-
-🔹 Step 3: Fix backend start script if needed
-notepad package.json
-
- ✍️ In package.json "scripts" section, update:
- BEFORE:
-     "start": "PORT=6201 ts-node src/index.ts"
- AFTER:
-     "start": "cross-env PORT=6201 ts-node src/index.ts"
- Save and close Notepad.
-
-🔹 Step 4: Install cross-env (if not installed yet)
-npm install cross-env --save-dev
-
-🔹 Step 5: Start the Backend Server
-WHY? This launches the API server on http://localhost:6201
-npm start
-
-
-back track
-cd ../student-app
-
-to close the backend should click ctrl + c
-
-In package.json change the start to cross-env infront the actual syntax
-
-npm - node package manager.
-
-
-
-
-
-
+- To stop any running server: press Ctrl + C in terminal
+- To move back to previous folder: cd ..
+- To switch between apps: use cd <folder-name>
+- npm stands for Node Package Manager, used to manage dependencies
